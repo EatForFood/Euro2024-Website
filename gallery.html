@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euro 2024</title>
+    <link href="stylesheets/gallery.css" rel="stylesheet">
+
+    <script>
+    
+           let currentImg=1;
+    
+           function swap()
+           {
+            let imgNum=this.id;
+            imgNum=imgNum.charAt(4);
+    
+            document.getElementById("mainImg").src="images/kit"+imgNum+".jpg";
+    
+            currentImg=imgNum;
+           }
+    
+           function next()
+           {
+                if(currentImg==6)
+                {
+                    document.querySelector("#mainImg").src="images/kit1.jpg";
+                    currentImg=1;
+                }
+                else
+                {
+                    currentImg++;
+                    document.querySelector("#mainImg").src="images/kit"+currentImg+".jpg";
+                }
+           }
+    
+           function previous()
+           {
+                if(currentImg==1)
+                {
+                    document.querySelector("#mainImg").src="images/kit1.jpg";
+                    currentImg=5;
+                }
+                else
+                {
+                    currentImg--;
+                    document.querySelector("#mainImg").src="images/kit"+currentImg+".jpg";
+                }
+           }
+
+        </script>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="globalNav">
+            <div id="logo">
+                <img src="images/uefaLogo.jpg">
+            </div>
+            <div id="menuBar">
+                <div id="Home" class="navLinks"><p><a href="index.html">Home</a></p></div>	
+                <div id="Players" class="navLinks"><p><a href="teams.html">Players</a></p></div>
+                <div id="Kits" class="navLinks"><p><a href="gallery.html">Kits</a></p></div>
+                <div id="Links" class="navLinks"><p><a href="links.html">Links</a></p></div>
+                <div id="Teams" class="navLinks"><p><a href="players.html">Nations</a></p></div>
+                <div id="Stadiums" class="navLinks"><p><a href="stadiums.html">Stadiums</a></p></div>
+                <div id="Contact Us" class="navLinks"><p><a href="form.html">Contact Us</a></p></div>	
+          
+            </div>
+        </div>
+
+<div id="pageTitle">
+    <h1>Gallery</h1>
+</div>
+
+<div id="gallery">
+<p>
+    
+    <div id="mid">
+        <div id="leftArrow">
+            <a id="prev"><img src="images/arrowLeft.png"></a>
+        </div>
+
+        <div id="midImage">   
+            <!-- images sourced from https://www.footballkitarchive.com/euro-2024-kits/-->
+            <img src="images/kit1.JPG"  id = "mainImg" alt="image of football kit" heigth ="600"  width ="500">
+        </div>
+
+        <div id="rightArrow">
+            <a id="next"><img src="images/arrowRight.png"></a>
+        </div>
+    </div>
+
+    <p>
+    <a href="#" id="link1" >Germany</a> |
+    <a href="#" id="link2" >Belgium</a> |
+    <a href="#" id="link3" >Italy</a> |
+    <a href="#" id="link4" >Spain</a> |
+    <a href="#" id="link5" >France</a> |
+    <a href="#" id="link6" >England</a> 
+ 
+    
+
+ </p>
+ </p>
+
+ <script>
+
+    document.querySelector('#link1').addEventListener("click", swap);
+    document.querySelector('#link2').addEventListener("click", swap);
+    document.querySelector('#link3').addEventListener("click", swap);
+    document.querySelector('#link4').addEventListener("click", swap);
+    document.querySelector('#link5').addEventListener("click", swap);
+    document.querySelector('#link6').addEventListener("click", swap);
+    document.querySelector('#next').addEventListener("click", next);
+    document.querySelector('#prev').addEventListener("click", previous);
+
+
+  </script>
+
+</div>
+
+    <footer>
+        <div id="leftFoot">
+            <ul id="fNav">
+                <li class="fNav"><a href="index.html">Home</a></li>
+                <li class="fNav"><a href="teams.html">Players</a></li>
+                <li class="fNav"><a href="gallery.html">Kits</a></li>
+                <li class="fNav"><a href="links.html">Links</a></li>
+                <li class="fNav"><a href="players.html">Teams</a></li>
+                <li class="fNav"><a href="stadiums.html">Stadiums</a></li>
+                <li class="fNav"><a href="form.html">Contact Us</a></li>
+            </ul>
+
+        </div>
+
+        <div id="midFoot">
+            <img src="images/uefaLogo.jpg">
+            <p>This website was created by Jake O' Sullivan, Student No. K00299729, 
+                for a project in the Responsive Web Development module during the second semester of the 2023/24 Year.</p>
+
+
+        </div>
+
+        <div id="rightFoot">
+            <img src="images/logo3.jpg">
+
+        </div>
+    </footer>
+
+</div>
+    
+</body>
+</html>

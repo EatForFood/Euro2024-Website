@@ -1,0 +1,332 @@
+body {
+    background-color: rgb(18, 60, 220, 1); 
+}
+#leftSection {
+    background-color: 00C2FF;
+}
+#globalNav {
+    display: flex;  
+    background-color:rgb(18, 60, 220, 1); 
+    
+}
+#container {
+    background-color: #00C2FF;
+}
+#logo {
+    flex: 25%;
+    width: 100%;
+    img {
+        width: 60%; height: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto; 
+        margin-top: 4%;   
+    }
+}
+#nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-right: 1em;
+    word-spacing: 5em;
+}
+#menuBar {
+    flex: 75%;
+    display: flex;
+    width: 100%; 
+    padding: 0;
+    a {
+        text-decoration: none;
+        color: #ffffff;
+     
+    }
+    p {
+        margin-top: 20%;
+        margin-bottom: auto;
+        font-size: 200%;
+        font-family: sans-serif;
+        a:hover {
+            color: #00C2FF;
+        }
+
+    }
+    .navLinks {
+        flex: 20%;
+        background-color: rgba(18, 60, 220, 1);
+        color: #ffffff;
+        text-align: center;
+        margin: 0;
+     
+        p {
+            margin-top: 20%;
+            margin-bottom: auto;
+            font-size: 210%;
+            font-family: sans-serif;
+            font-weight: bold;
+
+        }
+        }
+}
+.nav {
+    flex: 25%;
+    display: inline; 
+    font-size: 220%; 
+    font-family: sans-serif;
+    a {
+        text-decoration: none; 
+        color: #ffffff;
+    }
+}
+#middle {
+    display: flex;
+}
+
+ol {
+    font-size: larger; 
+}
+
+#pageTitle {
+    margin-top: 5%;
+    color: #ffffff;
+    text-align: center;
+    background-color: rgba(18, 60, 220, 1);
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 33%;
+    margin-right: 33%;
+    border-radius: 50px;
+    padding: 1px;
+}
+
+.flags {
+    width: 100%;
+    height: auto;
+}
+
+.country {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.cards {
+    flex: 33.3%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-right: 5%;
+    height: 100%;
+    width: 100%;
+    background-color:#e5edee;
+    border-style: none;
+    border-radius: 20px;
+    padding: 0%;
+}
+footer {
+    display: flex;
+    background-color: rgba(18, 60, 220, 1);
+    margin-top: 10%;
+}
+#leftFoot {
+    flex: 25%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    #fNav {
+        list-style-type: none;
+        columns: 2;
+    }
+    .fNav {
+        font-size: 130%; 
+        font-family: sans-serif;
+        padding: 2%;
+        a {
+            text-decoration: none; 
+            color: #ffffff;
+        }
+    }
+}
+#midFoot {
+    flex: 50%;
+    text-align: center;
+    padding: 1%;
+    color: #fdfdfd7a;
+    margin-left: 5%;
+    margin-right: 5%;
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 24%;
+        height: 44%;
+        padding: 1%;
+    }
+}
+#rightFoot {
+    flex: 25%;
+    margin-top: 1%;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px)
+{
+    #middle {
+        width: 1000%;
+        
+        
+        .cards {
+            margin-right: 0px;
+            margin-left: 0px;
+            width: 100%;
+            flex: 100%;
+            
+        }
+    }
+ 
+    #globalNav{
+        display: flex;
+        flex-direction: row;
+        #logo {
+            flex: 30%;
+        }
+        #menuBar {
+            flex: 70%;
+            font-size: 50%;
+        }
+    }
+
+
+    footer {
+        margin-top: 0px;
+        flex-direction: column;
+        #leftFoot {
+            #fNav {
+                font-size: 150%;
+                line-height: 200%;
+                columns: 2;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px)
+{
+    .cards {
+        img {
+            width: 30%;
+        }
+    }
+   
+    #globalNav{
+        margin-bottom: 3%;
+        display: flex;
+        flex-direction: row;
+        padding: 2%;
+        #logo {
+            flex: 0%;
+        }
+        #menuBar {
+            flex: 100%;
+            font-size: 80%;
+        }
+    }
+
+
+    #middle {
+        flex-direction: row;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0%;
+        padding: 0px;
+        
+        .flags {
+            width: 100%;
+            height: auto;
+        }
+        
+        .country {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        
+        .cards {
+            flex: 33.3%;
+            margin-left: 5%;
+            margin-top: 5%;
+            margin-right: 5%;
+            height: 10%;
+            width: 10%;
+            background-color:#e5edee;
+            border-style: none;
+            border-radius: 20px;
+            padding: 0%;
+        }
+
+    }
+    footer {
+        margin-top: 0px;
+        flex-direction: column;
+        #leftFoot {
+            #fNav {
+                font-size: 200%;
+                line-height: 200%;
+                columns: 2;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px)
+{
+   
+    #globalNav{
+        margin-bottom: 3%;
+        display: flex;
+        flex-direction: row;
+        #logo {
+            flex: 0%;
+        }
+        #menuBar {
+            flex: 100%;
+            font-size: 43%;
+            padding: 3%;
+        }
+    }
+    #container {
+     background-color:rgba(18, 60, 220, 1);
+    }
+
+    #pageTitle{
+        margin-left: 28%;
+    }
+
+    #middle {
+        flex-direction: column;
+        margin-left: 0px;
+        margin-top: 0%;
+        padding: 0px;
+        
+        .cards {
+            margin-left: 0px;
+            img {
+                width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+
+            }
+        }
+    }
+    footer {
+        margin-top: 0px;
+        flex-direction: column;
+        #leftFoot {
+            #fNav {
+                font-size: 150%;
+                line-height: 200%;
+                columns: 2;
+            }
+        }
+    }
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euro 2024</title>
+    <link href="stylesheets/form.css" rel="stylesheet">
+
+    <script>
+
+        function processForm(event)
+        {
+            if (validate() == false)
+            event.preventDefault();
+        }
+
+        function validate()
+        {
+            let fail = 0;
+
+            //name validation
+            let name_val = document.getElementById("name").value;
+            if (name_val == "" || name_val == null)
+            {
+                document.getElementById("nameError").innerHTML="* Please enter your name";
+                fail++;
+            }
+            else 
+            {
+                document.getElementById("nameError").innerHTML="";
+            }
+   
+            //mobile valdiation
+            let mobile_val = document.getElementById("mobile").value;
+            let mobileLimit = 10;
+            if (mobile_val == "" || mobile_val == null)
+            {
+                document.getElementById("mobileError").innerHTML="* Please enter your mobile";
+                fail++;
+            }
+            else if (mobile_val.length != mobileLimit)
+            {
+                document.getElementById("mobileError").innerHTML="* Mobile should be 10 digits";
+                fail++;
+            }
+            else if(mobile_val < 850000000 || mobile_val > 880000000)
+            {
+                document.getElementById("mobileError").innerHTML="* Mobile must begin with 085 086 or 087";
+                fail++;
+            }
+            else 
+            {
+                document.getElementById("mobileError").innerHTML="";
+            }
+
+           //email validation
+            let email_val = document.getElementById("email").value;
+            if (email_val == "" || email_val == null)
+            {
+                document.getElementById("emailError").innerHTML="";
+                fail++;
+            }
+            else 
+            {
+                document.getElementById("emailError").innerHTML="";
+            }
+
+            let email2_val = document.getElementById("email2").value;
+            if (email2_val == "" || email2_val == null)
+            {
+                document.getElementById("email2Error").innerHTML="* Please Re-enter your email";
+                fail++;
+            }
+            else if (email2_val != email_val)
+            {
+                document.getElementById("email2Error").innerHTML="* Email does not match";
+                fail++;
+            }
+            else 
+            {
+                document.getElementById("email2Error").innerHTML="";
+            }
+
+            let member_val = document.getElementById("member").value;
+            if (member_val != "yes" || member_val == null)
+            {
+                document.getElementById("memberError").innerHTML="* Please select an option";
+                fail++;
+            }
+            else 
+            {
+                document.getElementById("memberError").innerHTML="";
+            }
+
+            let message_val = document.getElementById("message").value;
+            if (message_val == "" || message_val == null)
+            {
+                document.getElementById("messageError").innerHTML="* Please enter your message";
+                fail++;
+            }
+            else 
+            {
+                document.getElementById("messageError").innerHTML="";
+            }
+
+            if (fail != 0)
+            {
+                return false;
+            }
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="globalNav">
+            <div id="logo">
+                <img src="images/uefaLogo.jpg">
+            </div>
+            <div id="menuBar">
+                <div id="Home" class="navLinks"><p><a href="home.html">Home</a></p></div>	
+                <div id="Players" class="navLinks"><p><a href="teams.html">Players</a></p></div>
+                <div id="Kits" class="navLinks"><p><a href="gallery.html">Kits</a></p></div>
+                <div id="Links" class="navLinks"><p><a href="links.html">Links</a></p></div>
+                <div id="Teams" class="navLinks"><p><a href="players.html">Nations</a></p></div>
+                <div id="Stadiums" class="navLinks"><p><a href="stadiums.html">Stadiums</a></p></div>
+                <div id="Contact Us" class="navLinks"><p><a href="form.html">Contact Us</a></p></div>	
+          
+            </div>
+        </div>
+
+
+
+<div id="middle">
+
+    <h1>Contact Us</h1>
+    <form id="contactForm" action="http://rdwd.atspace.cc/response.php" method="post">
+        
+            
+            <ul id="form" > 
+                <li><label for="name">Full Name </label><span id="nameError">* </span></li>
+                <input type="text" id="name" name="name" placeholder="">
+                <li><label for="phone">Phone No. </label><span id="mobileError">* </span></li>
+                <input type="text" id="mobile" name="mobile" placeholder="">
+                <li><label for="address">Address</label></li>
+                <input type="text" id="address" name="address">
+                <li><label for="email">Email </label><span id="emailError">* </span></li>
+                <input type="email" id="email" name="email" placeholder="eg. abc123@gmail.com">
+                <li><label for="email">Re Enter Email </label><span id="email2Error">* </span></li>
+                <input type="email" id="email2" name="email2">
+                <li><lable for="date">Date Of Birth</lable></li>
+                <input type="date" id="date" name="date">
+                <li><label for="lang">Language</label><li>
+                    <select id="lang" name="lang">
+                        <option value="English">English</option>
+                        <option value="German">German</option>
+                        <option value="French">French</option>
+                        <option value="Dutch">Dutch</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <li>
+                        <label>Are you a member? </label><span id="memberError">* </span>
+                        <input type="radio" name="member" value="yes" id="member" for="member">
+                        <label for="member">Yes</label>
+                        <input type="radio" name="member" value="no" id="member" for="member">
+                        <label for="member">No</label>
+                    </li>
+                    <li>
+                        <span id="messageError"> </span><textarea name="message" id="message" rows="4" cols="30" placeholder="Your message here (Required)"></textarea>
+                    </li>
+                    
+                    <li><div id="buttons"><input id="submit" type="submit" name="submit">
+                    <input id="reset" type="reset" name="reset"></div></li>
+            </ul>
+
+
+        
+    </form>
+
+    
+
+    <script>
+        document.getElementById("contactForm").addEventListener
+        ("submit", processForm);
+    </script>
+
+</div>
+
+    <footer>
+        <div id="leftFoot">
+            <ul id="fNav">
+                <li class="fNav"><a href="index.html">Home</a></li>
+                <li class="fNav"><a href="teams.html">Players</a></li>
+                <li class="fNav"><a href="gallery.html">Kits</a></li>
+                <li class="fNav"><a href="links.html">Links</a></li>
+                <li class="fNav"><a href="players.html">Teams</a></li>
+                <li class="fNav"><a href="stadiums.html">Stadiums</a></li>
+                <li class="fNav"><a href="form.html">Contact Us</a></li>
+            </ul>
+
+        </div>
+
+        <div id="midFoot">
+            <img src="images/uefaLogo.jpg">
+            <p>This website was created by Jake O' Sullivan, Student No. K00299729, 
+                for a project in the Responsive Web Development module during the second semester of the 2023/24 Year.</p>
+
+
+        </div>
+
+        <div id="rightFoot">
+            <img src="images/logo3.jpg">
+
+        </div>
+    </footer>
+
+</div>
+    
+</body>
+</html>
